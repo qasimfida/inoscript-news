@@ -21,7 +21,7 @@ const NewsCategories = () => {
   };
 
   return (
-    <StyledButtonsWrapper>
+    <StyledButtonsWrapper className="container">
       <div className="scroll-arrow left-arrow" onClick={scrollLeft}>
         <CaretLeftOutlined />
       </div>

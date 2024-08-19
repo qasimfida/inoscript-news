@@ -37,3 +37,11 @@ export const StyledCard = styled(Card)`
   padding-top: 7rem;
   margin-top: 16px;
 `;
+
+
+export const NewsTitle = styled.h2`
+  text-transform: uppercase;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 5px; 
+`;

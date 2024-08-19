@@ -23,9 +23,8 @@ export const StyledTabs = styled(Tabs)`
   }
 
   .ant-tabs-tab {
-    border-radius: 20px !important;
-    background: #fff;
-    border: 1px solid #0000009e;
+    background: #fff !important;
+    border: none !important;
     .ant-tabs-tab-btn {
       font-size: 16px;
       font-weight: 600;
@@ -36,9 +35,10 @@ export const StyledTabs = styled(Tabs)`
     }
   }
   .ant-tabs-tab.ant-tabs-tab-active {
-    background-color: #000;
+    color: #000;
+    border-bottom: 2px solid #2d343e !important;
     .ant-tabs-tab-btn {
-      color: #fff !important;
+      color: #000 !important;
     }
   }
 `;

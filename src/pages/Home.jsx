@@ -31,7 +31,7 @@ const Home = () => {
   }, [dispatch, searchQuery, location.pathname, selectedApi]);
 
   return (
-    <HomePageContainer>
+    <HomePageContainer className="container">
       <AppTabs />
     </HomePageContainer>
   );
@@ -39,4 +39,6 @@ const Home = () => {
 
 export default Home;
 
-const HomePageContainer = styled.div``;
+const HomePageContainer = styled.div`
+
+`;

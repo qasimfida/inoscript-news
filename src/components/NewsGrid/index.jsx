@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import NewsCard from "../NewsCard";
 import AppModal from "../AppModal";
-import { GridContainer, StyledCard, StyledGrid } from "./styles";
+import { GridContainer, NewsTitle, StyledCard, StyledGrid } from "./styles";
 
 const NewsGrid = ({ title }) => {
   const articles = useSelector((state) => state.news.items);
@@ -27,7 +27,7 @@ const NewsGrid = ({ title }) => {
 
   return (
     <GridContainer>
-      <h2>{title}</h2>
+      <NewsTitle>{title}</NewsTitle>
       <StyledGrid>
         {status === "loading"
           ? Array.from({ length: placeholderCount }, (_, index) => (

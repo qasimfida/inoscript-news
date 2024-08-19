@@ -1,7 +1,7 @@
 import React from "react";
 import AppSearch from "../AppSearch";
 import { Link, useLocation } from "react-router-dom";
-import { MainTitle, SearchWrapper, StyledHeaderWrapper, StyledLink, StyledList, StyledLogo, StyledNav } from "./styles";
+import { ActionButtonsWrapper, MainTitle, SearchWrapper, StyledButton, StyledHeaderWrapper, StyledLink, StyledList, StyledLogo, StyledNav } from "./styles";
 
 const Header = () => {
   const location = useLocation();
@@ -13,6 +13,7 @@ const Header = () => {
           <Link to="/">TNA</Link>
         </StyledLogo>
         {!isHome && <AppSearch />}
+       
         <StyledList isHome={isHome}>
             <StyledLink isHome={isHome}>
               <Link className={`link-1`} to={'/search'}>
@@ -31,7 +32,10 @@ const Header = () => {
           <MainTitle>
             Discover the latest and trending news from around the globe.
           </MainTitle>
-          <AppSearch />
+          <ActionButtonsWrapper>
+          <StyledButton to="search">Explore More</StyledButton>
+        </ActionButtonsWrapper>
+          {/* <AppSearch /> */}
         </SearchWrapper>
       )}
     </StyledHeaderWrapper>

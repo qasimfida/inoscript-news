@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import worldBanner from "../../assets/banner-image.jpg";
+import { Link } from "react-router-dom";
 
 export const StyledHeaderWrapper = styled.div`
   position: relative;
@@ -91,6 +92,7 @@ export const MainTitle = styled.h1`
   font-weight: 500;
   line-height: 50px;
   margin-bottom: 1.5rem;
+  text-align: center;
   @media (max-width: 1300px) {
     font-size: 38px;
   }
@@ -102,4 +104,17 @@ export const MainTitle = styled.h1`
     font-size: 26px;
     line-height: 26px;
   }
+`;
+
+export const ActionButtonsWrapper = styled.div`
+  display: flex;
+  gap: 10px;
+`;
+export const StyledButton = styled(Link)`
+  padding: 1rem;
+  outline: 0;
+  background: #fff;
+  color: #2d343e;
+  border: none;
+  border-radius: 8px;
 `;

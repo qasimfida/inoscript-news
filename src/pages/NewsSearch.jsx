@@ -38,7 +38,7 @@ const NewsSearch = () => {
   }, [dispatch, searchValue, filterButtonValue, setSearchValue, apiName]);
 
   return (
-    <NewsContainer>
+    <NewsContainer className="container">
       <NewsCategories />
       <NewsFilter selectedCategory={filterButtonValue} />
       <NewsGrid />
