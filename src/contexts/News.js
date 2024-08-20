@@ -12,7 +12,7 @@ const NewsContext = React.createContext({
 const NewsProvider = ({ children }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [category, setCategory] = useState("All");
-  const [source, setsource] = useState("newsApi");
+  const [source, setsource] = useState("gNews");
 
   const value = {
       searchQuery,

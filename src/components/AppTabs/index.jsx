@@ -12,14 +12,14 @@ const AppTabs = () => {
       children: <NewsGrid hasCover title="Browse New API" />,
     },
     {
-      key: "newYorkTimes",
-      label: "New York Times",
-      children: <NewsGrid hasCover title="Browse New York Times" />,
-    },
-    {
       key: "gNews",
       label: "Google News",
       children: <NewsGrid hasCover title="Browse Google News" />,
+    },
+    {
+      key: "newYorkTimes",
+      label: "New York Times",
+      children: <NewsGrid hasCover title="Browse New York Times" />,
     },
   ];
   const onChange = (key) => {
