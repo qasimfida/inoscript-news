@@ -33,6 +33,37 @@ export const StyledCard = styled(Card)`
   .ant-card-body {
     padding: 1rem;
   }
+
+  &.banner {
+    .ant-card-cover {
+      height: 100%;
+      max-height: 100%;
+      border: none;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .ant-card-body {
+      position:absolute;
+      background: linear-gradient(0deg, #ffffffc2, transparent);
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      p {
+        margin-bottom: 6px;
+      }
+      .ant-card-meta-title {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ant-card-meta-description {
+        display: none;
+      }
+
+    }
+  }
 `;
 
 export const EllipsisText = styled.div`
@@ -50,7 +81,7 @@ export const EllipsisText = styled.div`
 
 export const StyledImage = styled.img`
   width: 100%;
-  height: 150px;
+  height: 164px;
   transition: transform 0.3s ease;
   object-fit: cover;
 

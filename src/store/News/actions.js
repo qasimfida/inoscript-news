@@ -40,8 +40,8 @@ export const getArticlesByCategory = createAsyncThunk(
   }
 );
 
-export const fetchNewYorkTimesArticles = createAsyncThunk(
-  "articles/fetchNewYorkTimesArticles",
+export const fetchNYTimesArticles = createAsyncThunk(
+  "articles/fetchNYTimesArticles",
   async (query, { rejectWithValue }) => {
     const url = `${NY_TIMES_BASE_URL}/articlesearch.json?q=${query}&api-key=${NEW_YORK_TIMES_API_KEY}`;
 
@@ -56,8 +56,8 @@ export const fetchNewYorkTimesArticles = createAsyncThunk(
   }
 );
 
-export const fetchGoogleNewsArticles = createAsyncThunk(
-  "articles/fetchGoogleNewsArticles",
+export const fetchGNewsArticles = createAsyncThunk(
+  "articles/fetchGNewsArticles",
   async (query, { rejectWithValue }) => {
     const url = `${G_NEWS_BASE_URL}/search?q=${query}&lang=en&country=us&max=20&apikey=${GOOGLE_NEWS_API_KEY}`;
 

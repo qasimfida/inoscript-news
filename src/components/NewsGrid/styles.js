@@ -39,9 +39,13 @@ export const StyledCard = styled(Card)`
 `;
 
 
-export const NewsTitle = styled.h2`
+export const NewsTitle = styled.h4`
   text-transform: uppercase;
-  display: inline-block;
+  display: block;
   position: relative;
   padding-bottom: 5px; 
+  font-size: 24px;
+  margin-top: 52px;
+  font-weight: 600;
+  border-top: 2px solid #0000002b;
 `;

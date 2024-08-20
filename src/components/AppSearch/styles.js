@@ -5,30 +5,24 @@ const { Search } = Input;
 
 export const StyledSearch = styled(Search)`
   input {
-    padding: 15px;
+    padding: 0 12px;
+    height: 48px;
+    box-sizing: content-box;
     &::placeholder {
       color: #0000009e;
       font-size: 18px;
-      font-weight: 500;
-      @media (max-width: 768px) {
-        font-size: 14px;
-        font-weight: 500;
-      }
+      font-weight: 400;
     }
     @media (max-width: 768px) {
-      padding: 8px;
+      padding: 12px;
       font-size: 16px;
     }
   }
   .ant-input-group-addon {
     button {
-      padding: 10px;
+      padding: 0 10px;
       box-sizing: content-box;
-      height: 52px !important;
-      @media (max-width: 768px) {
-        height: 41px !important;
-        padding: 2px;
-      }
+      height: 46px !important;
     }
   }
 `;

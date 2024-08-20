@@ -5,42 +5,42 @@ import NewsFilter from "../components/NewsFilter";
 import { useDispatch } from "react-redux";
 import {
   fetchArticles,
-  fetchNewYorkTimesArticles,
-  fetchGoogleNewsArticles,
+  fetchNYTimesArticles,
+  fetchGNewsArticles,
 } from "../store/News/actions";
 import styled from "styled-components";
 import { useNews } from "../contexts/News";
 
 const NewsSearch = () => {
   const dispatch = useDispatch();
-  const { searchValue, setSearchValue, filterButtonValue, apiName } = useNews()
+  const { searchQuery, setSearchQuery, category, source } = useNews()
 
   useEffect(() => {
     let query = "all";
-    if (searchValue.trim()) {
-      query = searchValue;
-    } else if (filterButtonValue) {
-      query = filterButtonValue;
+    if (searchQuery.trim()) {
+      query = searchQuery;
+    } else if (category) {
+      query = category;
     }
 
-    switch (apiName) {
+    switch (source) {
       case "newsApi":
         dispatch(fetchArticles(query));
         break;
       case "newYorkTimes":
-        dispatch(fetchNewYorkTimesArticles(query));
+        dispatch(fetchNYTimesArticles(query));
         break;
       default:
-        dispatch(fetchGoogleNewsArticles(query));
+        dispatch(fetchGNewsArticles(query));
     }
 
-    setSearchValue("");
-  }, [dispatch, searchValue, filterButtonValue, setSearchValue, apiName]);
+    setSearchQuery("");
+  }, [dispatch, searchQuery, category, setSearchQuery, source]);
 
   return (
     <NewsContainer className="container">
       <NewsCategories />
-      <NewsFilter selectedCategory={filterButtonValue} />
+      <NewsFilter />
       <NewsGrid />
     </NewsContainer>
   );

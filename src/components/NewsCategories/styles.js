@@ -6,12 +6,12 @@ export const StyledButtonsWrapper = styled.div`
   justify-content: center;
   gap: 12px;
   margin-top: 1.5rem;
+  width: 100%;
 
   .scrollable-buttons {
     width: 100%;
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 8px;
     overflow-x: auto;
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -56,14 +56,23 @@ export const StyledButtonsWrapper = styled.div`
     box-shadow: none;
     transition: background-color 0.3s, color 0.3s;
     height: 44px;
-    padding: 4px 28px;
+    padding: 0 16px;
     font-weight: 600;
+    background: #fff;
+    border-color: #2c343e;
+    color: #000;
+    &.btn-active {
+      background: #2c343e !important;
+      border-color: #2c343e !important;
+      color: white !important;
+    }
   }
 
   :where(.css-dev-only-do-not-override-kghr11).ant-btn-primary:not(
       :disabled
     ):hover {
-    background: #ffc864 !important;
-    border-color: #ffc864 !important;
+    background: #2c343e !important;
+    border-color: #2c343e !important;
+    color: white !important;
   }
 `;

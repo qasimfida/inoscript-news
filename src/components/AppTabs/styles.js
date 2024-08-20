@@ -25,6 +25,7 @@ export const StyledTabs = styled(Tabs)`
   .ant-tabs-tab {
     background: #fff !important;
     border: none !important;
+    text-transform: uppercase;
     .ant-tabs-tab-btn {
       font-size: 16px;
       font-weight: 600;

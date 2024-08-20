@@ -14,14 +14,14 @@ export const StyledFilterHeaderWrapper = styled.div`
     gap: 20px;
   }
   h2 {
-    font-size: 45px;
+    font-size: 24px;
     font-weight: 600;
     margin-bottom: 0;
     color: #2c343e;
     fill: #2c343e;
-    border-bottom: 4px solid #2c343e;
     line-height: 53px;
-    text-transform: capitalize;
+    text-transform: uppercase;
+    
     @media (max-width: 768px) {
       font-size: 28px;
       line-height: 43px;

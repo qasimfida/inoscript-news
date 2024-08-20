@@ -4,30 +4,30 @@ import { StyledTabs } from "./styles";
 import NewsGrid from "../NewsGrid";
 
 const AppTabs = () => {
-  const { setApiName, apiName } = useNews();
+  const { setsource, source } = useNews();
   const items = [
     {
       key: "newsApi",
       label: "News Api",
-      children: <NewsGrid title="New API" />,
+      children: <NewsGrid hasCover title="Browse New API" />,
     },
     {
       key: "newYorkTimes",
       label: "New York Times",
-      children: <NewsGrid title="New York Times" />,
+      children: <NewsGrid hasCover title="Browse New York Times" />,
     },
     {
       key: "gNews",
       label: "Google News",
-      children: <NewsGrid title="Google News" />,
+      children: <NewsGrid hasCover title="Browse Google News" />,
     },
   ];
   const onChange = (key) => {
-    setApiName(key);
+    setsource(key);
   };
   return (
     <StyledTabs
-      defaultActiveKey={apiName}
+      defaultActiveKey={source}
       onChange={onChange}
       type="card"
       items={items}

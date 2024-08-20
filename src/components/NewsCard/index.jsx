@@ -12,6 +12,7 @@ const NewsCard = ({
   onClick,
   url,
   sourceName,
+  ...rest
 }) => {
   const [isLoading, setIsLoading] = useState(true);
 
@@ -28,6 +29,7 @@ const NewsCard = ({
         />
       }
       onClick={onClick}
+      {...rest}
     >
       <p className="source">{sourceName}</p>
       <Meta

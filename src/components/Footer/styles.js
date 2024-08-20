@@ -39,23 +39,3 @@ export const StyledLogo = styled.div`
     display: none;
   }
 `;
-export const StyledList = styled.ul`
-  display: flex;
-  gap: 20px;
-  list-style-type: none;
-  font-size: 16px;
-  font-weight: 600;
-  @media (max-width: 420px) {
-    display: none;
-  }
-`;
-export const StyledLink = styled.li`
-  a {
-    color: #fff;
-  }
-  .link-1 {
-    @media (max-width: 768px) {
-      display: none;
-    }
-  }
-`;

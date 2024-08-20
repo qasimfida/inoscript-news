@@ -6,7 +6,7 @@ import { StyledButtonsWrapper } from "./styles";
 import { CATEGORIES } from "../../constants";
 
 const NewsCategories = () => {
-  const { filterButtonValue, setFilterButtonValue } = useNews()
+  const { category, setCategory } = useNews()
   const scrollRef = useRef(null);
 
   const scrollRight = () => {
@@ -30,21 +30,8 @@ const NewsCategories = () => {
           <Button
             key={item.key}
             type="primary"
-            onClick={() => setFilterButtonValue(item.title)}
-            style={{
-              backgroundColor:
-                filterButtonValue.toLowerCase() === item.title.toLowerCase()
-                  ? "#ffc864"
-                  : "#fff",
-              borderColor:
-                filterButtonValue.toLowerCase() === item.title.toLowerCase()
-                  ? "#ffc864"
-                  : "#00000030",
-              color:
-                filterButtonValue.toLowerCase() === item.title.toLowerCase()
-                  ? "#000"
-                  : "#000",
-            }}
+            className={`${category.toLowerCase() === item.title.toLowerCase() && "btn-active"}`}
+            onClick={() => setCategory(item.title)}
           >
             {item.title}
           </Button>

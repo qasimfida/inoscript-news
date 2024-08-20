@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchArticles,
-  fetchGoogleNewsArticles,
-  fetchNewYorkTimesArticles,
+  fetchGNewsArticles,
+  fetchNYTimesArticles,
   getArticlesByCategory,
 } from "./actions";
 import { filterAndTransformArticles, transformGoogleNewsArticles, transformNewYorkTimesArticles } from "../../helpers/transforrm";
@@ -39,25 +39,25 @@ const news = createSlice({
         state.status = "failed";
         state.error = action.payload;
       })
-      .addCase(fetchNewYorkTimesArticles.pending, (state) => {
+      .addCase(fetchNYTimesArticles.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchNewYorkTimesArticles.fulfilled, (state, action) => {
+      .addCase(fetchNYTimesArticles.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items = transformNewYorkTimesArticles(action.payload);
       })
-      .addCase(fetchNewYorkTimesArticles.rejected, (state, action) => {
+      .addCase(fetchNYTimesArticles.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       })
-      .addCase(fetchGoogleNewsArticles.pending, (state) => {
+      .addCase(fetchGNewsArticles.pending, (state) => {
         state.status = "loading";
       })
-      .addCase(fetchGoogleNewsArticles.fulfilled, (state, action) => {
+      .addCase(fetchGNewsArticles.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.items = transformGoogleNewsArticles(action.payload);
       })
-      .addCase(fetchGoogleNewsArticles.rejected, (state, action) => {
+      .addCase(fetchGNewsArticles.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.payload;
       });

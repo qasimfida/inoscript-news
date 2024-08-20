@@ -3,22 +3,22 @@ import { StyledFilterHeaderWrapper, StyledSelect } from "./styles";
 import { SORT_OPTIONS, SOURCES } from "../../constants";
 import { useNews } from "../../contexts/News";
 
-const NewsFilter = ({ filterButtonValue }) => {
-  const { setFilterButtonValue, setApiName, apiName } = useNews()
+const NewsFilter = () => {
+  const { setCategory, setsource, source, category } = useNews()
 
   const handleApiChange = (value) => {
-    setApiName(value);
+    setsource(value);
   };
   const handleTypeChange = (value) => {
-    setFilterButtonValue(value);
+    setCategory(value);
   };
 
   return (
     <StyledFilterHeaderWrapper className="flex-between">
-      <h2>{filterButtonValue}</h2>
+      <h2>{category}  </h2>
       <div className="buttons-wrapper">
         <StyledSelect
-          defaultValue={apiName}
+          defaultValue={source}
           style={{ width: 150 }}
           onChange={handleApiChange}
           options={SOURCES}

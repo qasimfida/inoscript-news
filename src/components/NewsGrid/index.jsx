@@ -4,9 +4,8 @@ import NewsCard from "../NewsCard";
 import AppModal from "../AppModal";
 import { GridContainer, NewsTitle, StyledCard, StyledGrid } from "./styles";
 
-const NewsGrid = ({ title }) => {
-  const articles = useSelector((state) => state.news.items);
-  const status = useSelector((state) => state.news.status);
+const NewsGrid = ({ title, hasCover }) => {
+  const {items , status} = useSelector((state) => state.news);
 
   const placeholderCount = 20;
   const [visible, setVisible] = useState(false);
@@ -25,8 +24,31 @@ const NewsGrid = ({ title }) => {
     setVisible(false);
   };
 
+  const top4 = (items || []).slice(0,4)
+  const list = hasCover ?   (items || []).slice(3, items?.length): items
+  
   return (
     <GridContainer>
+      {hasCover &&
+       <div class="card-container">
+        {top4.map((item, index)=>{
+          const cls = `card banner ${index === 0? 'card-large': index === 1 ? 'card-medium': 'card-small'}`
+          return <NewsCard
+          key={item.key}
+          imageUrl={item.urlToImage}
+          url={item.url}
+          title={item.title}
+          description={item.description}
+          sourceName={item.source}
+          className={cls}
+          onClick={(event) => {
+            event.stopPropagation();
+            showModal(item);
+          }}
+        />
+        })}
+      </div>
+      }
       <NewsTitle>{title}</NewsTitle>
       <StyledGrid>
         {status === "loading"
@@ -37,7 +59,7 @@ const NewsGrid = ({ title }) => {
                 loading={true}
               />
             ))
-          : articles?.map((item) => (
+          : list?.map((item) => (
               <NewsCard
                 key={item.key}
                 imageUrl={item.urlToImage}

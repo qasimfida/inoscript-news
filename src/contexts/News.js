@@ -1,38 +1,38 @@
 import React, { useCallback, useContext, useState } from "react";
 
-const ArticlesContext = React.createContext({
-  searchValue: "",
-  setSearchValue: () => {},
-  filterButtonValue: "",
-  setFilterButtonValue: () => {},
-  apiName: "",
-  setApiName: () => {},
+const NewsContext = React.createContext({
+  searchQuery: "",
+  setSearchQuery: () => {},
+  category: "",
+  setCategory: () => {},
+  source: "",
+  setsource: () => {},
 });
 
-const ArticlesProvider = ({ children }) => {
-  const [searchValue, setSearchValue] = useState("");
-  const [filterButtonValue, setFilterButtonValue] = useState("All");
-  const [apiName, setApiName] = useState("newYorkTimes");
+const NewsProvider = ({ children }) => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [category, setCategory] = useState("All");
+  const [source, setsource] = useState("newsApi");
 
   const value = {
-      searchValue,
-      setSearchValue:useCallback(setSearchValue,[setSearchValue]),
-      filterButtonValue,
-      setFilterButtonValue:useCallback(setFilterButtonValue,[setFilterButtonValue]),
-      apiName,
-      setApiName:useCallback(setApiName,[setApiName]),
+      searchQuery,
+      setSearchQuery:useCallback(setSearchQuery,[setSearchQuery]),
+      category,
+      setCategory:useCallback(setCategory,[setCategory]),
+      source,
+      setsource:useCallback(setsource,[setsource]),
     }
   
 
   return (
-    <ArticlesContext.Provider
+    <NewsContext.Provider
       value={value}
     >
       {children}
-    </ArticlesContext.Provider>
+    </NewsContext.Provider>
   );
 };
 
-export const useNews = ()=>useContext(ArticlesContext)
+export const useNews = ()=>useContext(NewsContext)
 
-export default ArticlesProvider;
+export default NewsProvider;

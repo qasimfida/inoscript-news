@@ -7,11 +7,11 @@ const AppSearch = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const isHome = location.pathname === "/";
-  const { setSearchValue, setFilterButtonValue } = useNews();
+  const { setSearchQuery, setCategory } = useNews();
 
   const handleSearch = (value) => {
-    setSearchValue(value);
-    setFilterButtonValue(value);
+    setSearchQuery(value);
+    setCategory(value);
     navigate("/search");
   };
 
